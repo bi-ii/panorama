@@ -1,0 +1,126 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Hahmlet:wght@100..900&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Hahmlet:wght@100..900&display=swap');
+html, body{font-family: "IBM Plex Sans KR", sans-serif;color: #eee;}
+
+.container{width: 100%;height: 100vh;overflow: hidden;background-color: #000;perspective:1300px;}
+/* 움직이기 - perspective:1300px; 둥글게 돌아가는 느낌 줄수있음 깊이감 */
+
+.container>video{width: 100%;height: 100%;display: block;object-fit: cover;opacity: 0.7;filter: brightness(70%);}
+.wrap{width: 600px;height: 800px;position: fixed;left: calc(50% - 300px);top: calc(50% - 400px);}
+.box{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+/* 하나씩 보면서 작성하려고 1빼고 display none 처리 해놓고 진행 나중에 지움 */
+ /* .box1,.box6,.box2,.box3,.box7,.box5,.box8{display: none;} */
+/* 공통 스타일 */
+.title{position: absolute;font-size: 30px;  font-family: "Diphylleia", serif;transition: all 0.5s;top: 0px;opacity: 0;}
+.box:hover .title{top: -60px;opacity: 1;}
+.inner{width: 100%;height: 100%;}
+
+/* 개별 박스에 대한 스타일 */
+
+.box1 .inner{padding: 50px;box-sizing: border-box;border: 1px solid rgba(255,255,255,0.3);background-color: rgba(255,255,255,0.05);transition: all 0.5s;cursor: pointer;}
+.box1 .inner>p:nth-of-type(1){font-size: 25px;transition: all 0.5s;margin-bottom: 35px;}
+.box1>.inner img{width: 100%;margin-bottom: 35px;}
+.box1 .inner>p:nth-of-type(2){font-size: 20px;margin-bottom: 15px;}
+.box1 .inner>ul{opacity: 0.7;transition: all 0.5s;}
+.box1 .inner:hover>p:nth-of-type(1){text-shadow: 0px 0px 8px #00bbf9;}
+.box1 .inner:hover ul{opacity: 1;}
+.box1 .inner:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+
+/* box2 */
+.box2 .inner{padding: 50px;box-sizing: border-box;border: 1px solid rgba(255,255,255,0.3);background-color: rgba(255,255,255,0.05);transition: all 0.5s;cursor: pointer;}
+.box2 img{width: 100%;margin-bottom: 40px;}
+.box2 .inner>p:nth-of-type(1){font-size: 21px;transition: all 0.5s;margin-bottom: 60px;}
+.box2 .inner>p:nth-of-type(2),p:nth-of-type(3){opacity: 0.6;transition: all 0.5s;}
+.box2 .inner>div{margin: 30px 0;opacity: 0.6;transition: all 0.5s;}
+.box2 .inner>p:nth-of-type(4){font-size: 13px;text-align: right;margin-top: 40px;opacity: 0.6}
+.box2 .inner:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+.box2 .inner:hover>p:nth-of-type(2){opacity: 1;}
+.box2 .inner:hover>p:nth-of-type(3){opacity: 1;}
+.box2 .inner:hover>div{opacity: 1;}
+.box2 .inner:hover>p:nth-of-type(1){text-shadow: 0px 0px 8px #00bbf9;}
+
+/* box 3 */
+.box3 .inner{display: flex;flex-wrap: wrap;justify-content: space-between;align-content: space-between;}/* 3줄이라서 align content 줘야함 한줄은 items */
+.box3 .inner>div{border: 1px solid rgba(255,255,255,0.3);width: 48%;height: 31.5%;cursor: pointer;background-color: rgba(255,255,255,0.05);display: flex;justify-content: center;align-items: center;flex-direction: column;opacity: 0.7;transition: all 0.5s;}
+.box3 .inner>div>img{width: 100%;height: 100%;}
+.box3 .inner>div:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15); text-shadow: 0px 0px 8px #00bbf9;}
+
+/* box 4 */
+.box4 .inner{box-sizing: border-box; border: 1px solid rgba(255,255,255,0.5);background-color: rgba(255,255,255,0.05);padding: 50px;cursor: pointer;position: relative;overflow: hidden;transition: all 0.5s;}
+
+
+.box4 .inner>div>.slide{width: 500px;height: 700px;position: absolute;}
+.box4 .inner>div>.slide>a{width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;}
+.box4 .inner>div>.slide1>a{background: url(../imgs_2/5-1.png) center center no-repeat;background-size: cover; }
+.box4 .inner>div>.slide2>a{background: url(../imgs_2/5-2.png) center center no-repeat;background-size: cover; }
+.box4 .inner>div>.slide3>a{background: url(../imgs_2/5-3.png) center center no-repeat;background-size: cover; }
+.box4 .inner>div>.slide4>a{background: url(../imgs_2/5-4.png) center center no-repeat;background-size: cover; }
+.box4 .inner>div>.slide5>a{background: url(../imgs_2/5-5.png) center center no-repeat;background-size: cover; }
+
+.box4 .inner:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+
+/* box5 */
+.box5 .inner{display: flex;flex-direction: column;justify-content: space-between;cursor: pointer;}
+.box5 .inner>div{box-sizing: border-box; border: 1px solid rgba(255,255,255,0.3);background-color: rgba(255,255,255,0.05);height: 23%;display: flex; align-items: center;transition: all 0.5s;}
+.box5 .inner>.icon>img{width: 80%;height: 100%;}
+.box5 .inner>.icon>p{margin-left: 15px;transition: all 0.5s;}
+.box5 .inner>div:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+.box5 .inner>.icon:hover>p{text-shadow: 0px 0px 8px #00bbf9;}
+
+
+/* box6 */
+.box6 .inner{display: flex;flex-direction: column;justify-content: space-between;cursor: pointer;}
+.box6 .inner>div{box-sizing: border-box; border: 1px solid rgba(255,255,255,0.3);background-color: rgba(255,255,255,0.05);height: 23%;display: flex; align-items: center;transition: all 0.5s;}
+.box6 .inner>.icon>img{width: 80%;height: 100%;}
+.box6 .inner>.icon>p{margin-left: 15px;transition: all 0.5s;}
+.box6 .inner>div:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+.box6 .inner>.icon:hover>p{text-shadow: 0px 0px 8px #00bbf9;}
+
+/* box 7 */
+.box7 .inner{ padding: 50px;box-sizing: border-box;border: 1px solid rgba(255,255,255,0.3);background-color: rgba(255,255,255,0.05);transition: all 0.5s;cursor: pointer;
+position: relative;overflow: hidden;}
+.box7 .inner>.slide{width: 500px;height: 700px;position: absolute;}
+.box7 .inner>.slide>a{width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;}
+
+.box7 .inner>.slide1>a{background: url(../imgs_2/5.jpg) center center no-repeat;background-size: cover; }
+.box7 .inner>.slide2>a{background: url(../imgs_2/4.jpg) center center no-repeat;background-size: cover; }
+.box7 .inner>.slide3>a{background: url(../imgs_2/3.jpg) center center no-repeat;background-size: cover; }
+
+/* .box7 .inner>div{border: 1px solid rgba(255,255,255,0.3);margin: 20px 0; width: 100%; height: 600px; background: url(../imgs_2/5.jpg) center center no-repeat;background-size: cover;}
+.bgimg2{position: absolute;top: 100%;right: 0;transition: all 0.5s;}
+.box7 .inner:hover .bgimg2{position: absolute;top: -46%;right: 0;} */
+.box7 .inner:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+ 
+
+/* box8 */
+.box8 .inner{padding: 50px;box-sizing: border-box;border: 1px solid rgba(255,255,255,0.3);background-color: rgba(255,255,255,0.05);transition: all 0.5s;cursor: pointer;}
+.box8 .inner>p:nth-of-type(1){font-size: 25px;transition: all 0.5s;margin-bottom: 60px;}
+.box8>.inner img{width: 100%;margin-bottom: 50px;}
+.box8 .inner>p:nth-of-type(2){font-size: 20px;margin-bottom: 15px;}
+.box8 .inner img{opacity: 0.5;transition: all 0.5s;}
+.box8 .inner>p:nth-of-type(3){font-size: 20px;margin-bottom: 15px;}
+.box8 .inner:hover>p:nth-of-type(1){text-shadow: 0px 0px 8px #00bbf9;}
+.box8 .inner:hover img{opacity: 1;}
+.box8 .inner:hover{transform: scale(1.03); opacity: 1;background-color: rgba(255,255,255,0.15);}
+
+/* 움직이기 - box 위치 조정 작은따옴표 안 들어가게*/
+.wrap{transform-style: preserve-3d;}
+.box{backface-visibility: hidden;}
+.box1{transform: rotateY(0deg) translateZ(-764px);}
+.box2{transform: rotateY(45deg) translateZ(-764px);}
+.box3{transform: rotateY(90deg) translateZ(-764px);}
+.box4{transform: rotateY(135deg) translateZ(-764px);}
+.box5{transform: rotateY(180deg) translateZ(-764px);}
+.box6{transform: rotateY(225deg) translateZ(-764px);}
+.box7{transform: rotateY(270deg) translateZ(-764px);}
+.box8{transform: rotateY(315deg) translateZ(-764px);}
+ 
+/* 움직이기 - 애니메이션 적용 */
+@keyframes move{
+ 0%{transform: rotateY(0deg);}
+ 100%{transform: rotateY(360deg);}
+}
+
+ .wrap{animation: move linear 35s infinite;}
+.pause{animation-play-state: paused;}  
